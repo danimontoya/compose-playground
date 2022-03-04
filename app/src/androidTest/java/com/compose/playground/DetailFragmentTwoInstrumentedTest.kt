@@ -20,22 +20,20 @@ import org.junit.runner.RunWith
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class MasterDetailInstrumentedTest {
+class DetailFragmentTwoInstrumentedTest {
 
     @get:Rule
     val rule = composeMainActivityTestRule()
 
     @Test
-    fun navigateThroughDetailItems() {
+    fun navigateToDetailFragmentTwo() {
         rule.launch()
 
-        onView(withId(R.id.itemOne)).check(matches(isDisplayed()))
-        onView(withId(R.id.detailItemOne)).check(matches(isDisplayed()))
+        onView(withId(R.id.goToItemsList)).check(matches(isDisplayed()))
+        onView(withId(R.id.goToItemsList)).perform(click())
 
+        onView(withId(R.id.itemTwo)).check(matches(isDisplayed()))
         onView(withId(R.id.itemTwo)).perform(click())
         rule.onNodeWithText("Detail item 2").assertIsDisplayed()
-
-        onView(withId(R.id.itemThree)).perform(click())
-        onView(withId(R.id.detailItemThree)).check(matches(isDisplayed()))
     }
 }

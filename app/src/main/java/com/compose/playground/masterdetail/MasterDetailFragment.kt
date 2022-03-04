@@ -12,10 +12,6 @@ import com.compose.playground.masterdetail.list.ListFragment
 
 class MasterDetailFragment : Fragment(R.layout.fragment_master_detail) {
 
-    companion object {
-        fun newInstance() = MasterDetailFragment()
-    }
-
     internal val viewModel: MasterDetailViewModel by viewModels()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.compose.playground.dashboard.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+
+        <action
+            android:id="@+id/action_dashboardFragment_to_masterDetailFragment"
+            app:destination="@id/masterDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.compose.playground.masterdetail.list.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list">
+
+        <action
+            android:id="@+id/action_listFragment_to_detailFragmentOne"
+            app:destination="@id/detailFragmentOne" />
+        <action
+            android:id="@+id/action_listFragment_to_detailFragmentTwo"
+            app:destination="@id/detailFragmentTwo" />
+        <action
+            android:id="@+id/action_listFragment_to_detailFragmentThree"
+            app:destination="@id/detailFragmentThree" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragmentOne"
+        android:name="com.compose.playground.masterdetail.detail.DetailFragmentOne"
+        android:label="DetailFragmentOne"
+        tools:layout="@layout/fragment_detail_one"/>
+
+    <fragment
+        android:id="@+id/detailFragmentTwo"
+        android:name="com.compose.playground.masterdetail.detail.DetailFragmentTwo"
+        android:label="DetailFragmentTwo"
+        tools:layout="@layout/fragment_detail_two"/>
+
+    <fragment
+        android:id="@+id/detailFragmentThree"
+        android:name="com.compose.playground.masterdetail.detail.DetailFragmentThree"
+        android:label="DetailFragmentThree"
+        tools:layout="@layout/fragment_detail_three"/>
+
+    <fragment
+        android:id="@+id/masterDetailFragment"
+        android:name="com.compose.playground.masterdetail.MasterDetailFragment"
+        android:label="MasterDetailFragment"
+        tools:layout="@layout/fragment_master_detail">
+    </fragment>
+
+</navigation>
