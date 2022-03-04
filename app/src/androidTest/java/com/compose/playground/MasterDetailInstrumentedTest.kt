@@ -2,7 +2,6 @@ package com.compose.playground
 
 
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
@@ -24,10 +23,12 @@ import org.junit.runner.RunWith
 class MasterDetailInstrumentedTest {
 
     @get:Rule
-    val rule = createAndroidComposeRule(MainActivity::class.java)
+    val rule = composeMainActivityTestRule()
 
     @Test
     fun navigateThroughDetailItems() {
+        rule.launch()
+
         onView(withId(R.id.itemOne)).check(matches(isDisplayed()))
         onView(withId(R.id.detailItemOne)).check(matches(isDisplayed()))
 
