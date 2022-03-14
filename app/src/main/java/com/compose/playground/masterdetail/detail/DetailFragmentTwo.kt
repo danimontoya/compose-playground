@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Surface
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,9 +44,11 @@ class DetailFragmentTwo : Fragment() {
 
 @Composable
 private fun DetailFragmentTwoContent() {
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = colorResource(id = android.R.color.holo_blue_dark)
+    Column(
+        modifier = Modifier
+            .background(color = colorResource(id = android.R.color.holo_blue_dark))
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState()) // with this line commented the test passes
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),
