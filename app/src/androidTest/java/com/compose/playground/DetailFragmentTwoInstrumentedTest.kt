@@ -9,7 +9,6 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,10 +27,6 @@ class DetailFragmentTwoInstrumentedTest {
     @Test
     fun navigateToDetailFragmentTwo() {
         rule.launch()
-
-        onView(withId(R.id.goToItemsList)).check(matches(isDisplayed()))
-        onView(withId(R.id.goToItemsList)).perform(click())
-
         onView(withId(R.id.itemTwo)).check(matches(isDisplayed()))
         onView(withId(R.id.itemTwo)).perform(click())
         rule.onNodeWithText("Detail item 2").assertIsDisplayed()
